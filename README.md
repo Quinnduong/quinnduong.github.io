@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Welcome to My Portfolio</h1>
-        <p>Hi! I'm [Your Name], and this is my collection of Jupyter notebooks. Enjoy exploring my work!</p>
+        <p>Hi! I'm Quinn Duong, and this is my collection of Jupyter notebooks. Enjoy exploring my work!</p>
     </header>
     <main>
         <section class="notebooks">
@@ -22,7 +22,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+        <p>&copy; 2024 Quinn Duong. All rights reserved.</p>
     </footer>
 </body>
 </html>
