@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quin Duong's Professional Portfolio</title>
+    <title>Quinn Duong's Professional Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -61,7 +61,64 @@
         height: 600px;
         object-fit: cover;
       }
+    
+      
+.slider-container {
+    position: relative;
+    width: 1200px;
+    max-width: 1200px; /* Maximum width for the container */
+    height: 700px; /* Adjust the height of the slide container */
+    overflow: hidden;
+    border-radius: 10px;
+}
 
+.slider {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+            display: none; /* Initially hide all slides */
+            width: 100%;
+            height: 100%; /* Make the slide height match the container */
+            transition: opacity 0.5s ease;
+        }
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%; /* Make the image height match the container */
+  object-fit: contain; /* Ensure the image covers the container without distortion */
+  border-radius: 10px;
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
       .intro .text {
         max-width: 600px;
         margin-left: 2rem;
@@ -84,6 +141,13 @@
       .section h2 {
         font-family: "Playfair Display", serif;
         font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #333;
+        text-align: center;
+      }
+      section h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
         margin-bottom: 2rem;
         color: #333;
         text-align: center;
@@ -257,7 +321,7 @@
               </div>
               <a href="google-data-analytics-capstone.html">Notebook 3: Google Data Analytics Capstone </a>
               <p>
-               This Capstone project focused on analyzing a comprehensive dataset
+               The Google Data Analytics Capstone Project focused on analyzing a comprehensive dataset
                 from a bike-share program, consisting of approximately 6 million rows, to uncover rider 
                 usage patterns and trends. This analysis provided actionable insights to optimize bike 
                 availability, improve customer satisfaction, and inform marketing decisions for 
@@ -298,6 +362,122 @@
           </li>
         </ul>
       </section>
+
+    
+
+
+    <section class="section notebooks">
+      <h2>My Dashboards</h2>
+      <h1>Financial Statistic Dashboards System on Excel</h1>
+   
+        <div class="slider-container">
+          <div class="slider">
+              <div class="slide active">
+                  <img src="/Users/quinnduong/Desktop/sc1.png" alt="Dashboard 1">
+              </div>
+              <div class="slide">
+                  <img src="/Users/quinnduong/Desktop/sc2.png" alt="Dashboard 2">
+              </div>
+              <div class="slide">
+                <img src="/Users/quinnduong/Desktop/sc3.png" alt="Dashboard 3">
+              </div>
+          </div>
+          <div class="navigation">
+              <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+              <button class="next" onclick="changeSlide(1)">&#10095;</button>
+          </div>
+      </div>
+      <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= document.querySelectorAll('.slide').length) {
+                slideIndex = 0;
+            } else if (slideIndex < 0) {
+                slideIndex = document.querySelectorAll('.slide').length - 1;
+            }
+            showSlides(slideIndex);
+        }
+
+        function showSlides(n) {
+            let slides = document.querySelectorAll('.slide');
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+                slide.classList.remove('active');
+            });
+            slides[n].style.display = 'block';
+            slides[n].classList.add('active');
+        }
+    </script>
+    
+    <br>
+
+      <h1>Dashboard Overview and Insights</h1>
+      
+    <p>
+    
+
+      1. Income Sources Dashboard:<br>
+      
+      This dashboard offers an in-depth exploration of all revenue streams, highlighting the contributions of each source. Key features include:<br>
+      
+      Dynamic Web Chart: Breaks down each income source, showcasing its percentage of the total and emphasizing the most significant contributors.<br>
+
+      Creative Doughnut Chart: Visually tracks progress toward income targets, clearly showing the percentage achieved.<br>
+
+      Comprehensive Summary: Includes a clear title, description, and an overview of total income versus targets.<br>
+
+      Line Chart: Tracks income trends month by month, providing a clear view of fluctuations and growth.<br>
+
+      Income Source Breakdown: Displays the total counts and percentages for each income item.<br>
+
+      Monthly Income Average: Offers insights into average monthly revenue.<br>
+
+      Bar Chart: Illustrates monthly operating profits alongside the total amount.<br>
+
+      Marketing Strategy Analysis: Compares the impact of two distinct marketing strategies on income.<br>
+
+      Yearly Slicer Control: All data dynamically updates based on the selected year, allowing for precise time-based analysis.<br>
+      </p>
+
+    
+    
+      <p>
+      2. Country Profit Analysis Dashboard:<br>
+      
+      This dashboard zeroes in on profitability by country, featuring:<br>
+      
+      Dynamic Map Design: A creatively designed map chart that visually analyzes profit contributions from each country, spotlighting the top performers.<br>
+
+      Tax Breakdown: Detailed information on various tax types.<br>
+
+      Doughnut Chart with Circular Edges: Represents the percentage of profits achieved in a sleek, modern design.<br>
+      Yearly Slicer Control: Adjust the time frame to see how profits evolve over the years.<br>
+      </p>
+    
+      <p>
+      3. Sales Process Dashboard:<br>
+      
+      This dashboard tracks the entire sales funnel, helping you understand customer flow and sales stages:<br>
+      
+      Process Diagram: Visualizes the stages of the sales process, showing the number of customers at each stage and highlighting the most common paths.<br>
+
+      Sales Progress Doughnut Chart: Displays total sales and progress toward sales targets.<br>
+
+      Point of Sale Analysis: Charts and data show sales distribution across various points of sale.<br>
+
+      Refund Analysis: A bar chart presents the percentage of orders that were refunded.<br>
+
+      Yearly Slicer Control: Enables a year-by-year comparison of sales data for more detailed insights.<br>
+    </p> 
+    <br>
+    <a href="/Users/quinnduong/Downloads/Financial Statistics Dashboard - Quynh Duong.xlsx">Excel file (Read-only): Financial Statistic Dashboard Systems on Excel </a>
+
+  
+  </section>
+
     </main>
     <footer>
       <p>
